@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Socket.io Monitor Example</title>
+    <link rel="stylesheet" href="/build.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 50px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+      th, td {
+        padding: 5px 10px;
+      }
+      .docs {
+        margin-bottom: 30px;
+      }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <script src="/build.js"></script>
+    <div class="docs">
+      <h1>Socket.io Monitor Example</h1>
+      <p>Try killing and restarting the server. Clicking the monitor while it's disconnected triggers a reconnect attempt. Clicking while it's reconnecting aborts the attempt and all future attempts.</p>
+    </div>
+    <div id="monitor"></div>
+    <hr/>
+    <script>
+      var socket = io.connect('http://localhost');
+      var Monitor = require('socket-monitor');
+      var mon = new Monitor('#monitor');
+      mon.attach(socket);
+      [].slice.call(document.querySelectorAll('.buttons button')).forEach(function(button){
+        button.addEventListener('click', mon.setStatus.bind(mon, button.getAttribute('name')));
+      });
+    </script>
+  </body>
+</html>

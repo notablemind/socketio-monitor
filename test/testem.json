@@ -1,0 +1,10 @@
+{
+  "framework": "mocha",
+  "src_files": [
+    "test/sinon-1.7.1.js",
+    "build/build.js",
+    "test/tests.js",
+    "test/angular-mocks.js"
+  ],
+  "test_page": "test/index.html"
+}

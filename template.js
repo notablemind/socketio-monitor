@@ -1,0 +1,1 @@
+module.exports = '<span class="circle">&bull;</span>\n<span class="stati">\n<span class="status">disconnected</span>\n<span class="hoverStatus">reconnect</span>\n</span>\n';

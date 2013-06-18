@@ -1,0 +1,65 @@
+
+.socket-monitor {
+  font-family: sans-serif;
+  display: inline-block;
+  background-color: #777;
+  border-radius: 15px;
+  padding-right: 15px;
+  padding-left:  5px;
+  padding-bottom: 5px;
+  color: white;
+  cursor: default;
+}
+
+.socket-monitor .stati {
+  position: relative;
+}
+
+.socket-monitor.status-connecting,
+.socket-monitor.status-disconnected {
+  cursor: pointer;
+}
+
+.socket-monitor.status-connecting:hover .hoverStatus,
+.socket-monitor.status-disconnected:hover .hoverStatus {
+  display: inline;
+  color: #ccc;
+}
+
+.socket-monitor .hoverStatus {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.socket-monitor.status-connecting:hover .status,
+.socket-monitor.status-disconnected:hover .status {
+  visibility: hidden;
+}
+
+.socket-monitor .circle {
+  padding: 3px 0 3px 3px;
+  font-size: 45px;
+  line-height: 22px;
+  display: inline-block;
+  margin-bottom: -10px;
+  border-radius: 10px;
+  text-shadow: 0 0 10px #999;
+}
+
+.socket-monitor.status-connected .circle {
+  color: rgb(0, 219, 0);
+}
+.socket-monitor.status-disconnected .circle {
+  color: black;
+}
+.socket-monitor.status-connecting .circle {
+  color: rgb(0, 153, 255);
+}
+.socket-monitor.status-errored .circle {
+  color: red;
+}
+

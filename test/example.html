@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Socket.io Monitor Example</title>
+    <link rel="stylesheet" href="../build/build.css">
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+      th, td {
+        padding: 5px 10px;
+      }
+      .docs {
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <script src="../build/build.js"></script>
+    <div class="docs">
+      <h1>Socket.io Monitor Example</h1>
+      <div class="buttons">
+        <button name="connected">Connected</button>
+        <button name="connecting">Connecting</button>
+        <button name="disconnected">Disconnected</button>
+        <button name="errored">Errored</button>
+      </div>
+    </div>
+    <div id="monitor"></div>
+    <hr/>
+    <script>
+      var Monitor = require('socket-monitor');
+      var mon = new Monitor('#monitor');
+      [].slice.call(document.querySelectorAll('.buttons button')).forEach(function(button){
+        button.addEventListener('click', mon.setStatus.bind(mon, button.getAttribute('name')));
+      });
+    </script>
+  </body>
+</html>

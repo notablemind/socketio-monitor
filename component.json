@@ -1,0 +1,21 @@
+{
+  "name": "socket-monitor",
+  "repo": "notablemind/socket-monitor",
+  "description": "A monitor widget for socket.io",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/query": "*",
+    "component/classes": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "socket-monitor.css"
+  ]
+}
