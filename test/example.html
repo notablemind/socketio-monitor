@@ -32,7 +32,7 @@
     <div id="monitor"></div>
     <hr/>
     <script>
-      var Monitor = require('socket-monitor');
+      var Monitor = require('socketio-monitor');
       var mon = new Monitor('#monitor');
       [].slice.call(document.querySelectorAll('.buttons button')).forEach(function(button){
         button.addEventListener('click', mon.setStatus.bind(mon, button.getAttribute('name')));
