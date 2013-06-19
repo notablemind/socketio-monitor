@@ -31,7 +31,8 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-  setTimeout(disable.bind(null, socket), 3000);
+  if (timer) clearTimeout(timer);
+  timer = setTimeout(disable.bind(null, socket), 3000);
 });
 
 function enable(){
@@ -39,6 +40,7 @@ function enable(){
   app.listen(3545);
 }
 
+var timer = null;
 function disable(socket){
   console.log('closing');
   try {
@@ -46,7 +48,8 @@ function disable(socket){
     socket.disconnect();
   } catch (e) {
     console.log('fail', e);
-    setTimeout(disable.bind(socket), 1000);
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(disable.bind(null, socket), 1000);
   }
   setTimeout(enable, 5000);
 }

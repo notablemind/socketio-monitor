@@ -1,6 +1,6 @@
 {
-  "name": "socket-monitor",
-  "repo": "notablemind/socket-monitor",
+  "name": "socketio-monitor",
+  "repo": "notablemind/socketio-monitor",
   "description": "A monitor widget for socket.io",
   "version": "0.0.1",
   "keywords": [],
